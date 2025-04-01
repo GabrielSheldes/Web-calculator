@@ -1,32 +1,29 @@
 <?php
 include "funcao.php";
 
-$num1 = $_POST['numero1'];
-$num2 = $_POST['numero2'];
-$operacao = $_POST['op'];
+$_POST['numero1'];
+$_POST['numero2'];
+$_POST['op'];
 $resultado;
 
-switch($operacao){
+switch($_POST['op']){
     case '+':
-        $resultado = soma( $num1,$num2);
+        $resultado = soma($_POST['numero1'], $_POST['numero2']);
         break;
-
     case '-':
-        $resultado = sub( $num1,$num2);
+        $resultado = sub($_POST['numero1'], $_POST['numero2']);
         break;
-    
-    case '/':
-        $resultado = div( $num1,$num2);
-        break;
-    
     case '*':
-        $resultado = mult( $num1,$num2);
+        $resultado = mult($_POST['numero1'], $_POST['numero2']);
         break;
-    
+    case '/':
+        $resultado = div($_POST['numero1'], $_POST['numero2']);
+        break;
     default: //default sempre fica em ultimo 
-        $resultado="";
+        $resultado="Operação inválida";
         break;
 }
+
 ?>
 
 <div class="row">
